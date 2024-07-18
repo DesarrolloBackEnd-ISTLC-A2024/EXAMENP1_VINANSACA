@@ -1,0 +1,6 @@
+@EXAMENP1_VIÑANSACA_HostAddress = http://localhost:5091
+
+GET {{EXAMENP1_VIÑANSACA_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
