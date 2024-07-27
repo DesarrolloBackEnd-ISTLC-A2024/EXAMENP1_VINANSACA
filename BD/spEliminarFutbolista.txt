@@ -1,0 +1,13 @@
+USE [EXAMEN]
+GO
+/****** Object:  StoredProcedure [dbo].[spEliminarFutbolista]    Script Date: 26/07/2024 23:28:57 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROCEDURE [dbo].[spEliminarFutbolista]
+    @Id INT
+AS
+BEGIN
+    UPDATE Futbolista SET Estado = 'I' WHERE Id = @Id
+END

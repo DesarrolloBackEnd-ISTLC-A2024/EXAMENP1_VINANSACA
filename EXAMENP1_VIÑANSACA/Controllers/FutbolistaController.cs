@@ -12,34 +12,37 @@ namespace EXAMENP1_VIÑANSACA.Controllers
     {
         // GET: api/<FutbolistaController>
         [HttpGet]
-        public List<Futbolista> Get()
+        public List<Futbolista> Getfutbolistas()
         {
-            return ConexionDB.GetFutbolistasActivos();
+            return ConexionBD.Futbolistas();
         }
 
         // GET api/<FutbolistaController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public Futbolista Get(int id)
         {
-            return "value";
+           return ConexionBD.Jugador(id);
         }
 
         // POST api/<FutbolistaController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post([FromBody] Futbolista obJFutbolista)
         {
+            ConexionBD.PostFutbolista(obJFutbolista);
         }
 
         // PUT api/<FutbolistaController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public void Put(int id, [FromBody] Futbolista obJFutbolista)
         {
+            ConexionBD.PutFutbolista(id, obJFutbolista);
         }
 
         // DELETE api/<FutbolistaController>/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+            ConexionBD.DeleteFutbolista(id);
         }
     }
 }

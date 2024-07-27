@@ -1,0 +1,13 @@
+USE [EXAMEN]
+GO
+/****** Object:  StoredProcedure [dbo].[spConsultarFutbolista]    Script Date: 26/07/2024 23:24:04 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROCEDURE [dbo].[spConsultarFutbolista]
+    @Id INT
+AS
+BEGIN
+    SELECT * FROM Futbolista WHERE Id = @Id
+END

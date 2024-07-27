@@ -1,0 +1,17 @@
+USE [EXAMEN]
+GO
+/****** Object:  StoredProcedure [dbo].[spConsultarHistoricoEquipos]    Script Date: 26/07/2024 23:27:04 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROCEDURE [dbo].[spConsultarHistoricoEquipos]
+    @FutbolistaId INT
+AS
+BEGIN
+    SELECT  e.Nombre AS NombreEquipo, f.Nombre AS NombreFutbolista,he.FechaInicio,he.FechaFin
+ FROM HistoricoEquipos he
+ INNER JOIN Futbolista f ON he.FutbolistaId=f.Id
+ INNER JOIN Equipos e ON he.EquipoId = e.Id
+ WHERE he.FutbolistaId = @FutbolistaId
+END

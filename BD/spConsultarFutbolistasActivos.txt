@@ -1,0 +1,12 @@
+USE [EXAMEN]
+GO
+/****** Object:  StoredProcedure [dbo].[spConsultarFutbolistasActivos]    Script Date: 26/07/2024 23:24:45 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROCEDURE [dbo].[spConsultarFutbolistasActivos]
+AS
+BEGIN
+    SELECT * FROM Futbolista WHERE Estado = 'A'
+END

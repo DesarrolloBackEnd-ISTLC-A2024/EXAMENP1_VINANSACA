@@ -1,0 +1,24 @@
+USE [EXAMEN]
+GO
+/****** Object:  StoredProcedure [dbo].[spCrearFutbolista]    Script Date: 26/07/2024 23:28:07 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROCEDURE [dbo].[spCrearFutbolista]
+   
+    @Nombre VARCHAR(100),
+    @FechaNacimiento DATE,
+    @Nacionalidad VARCHAR(50),
+    @Posicion VARCHAR(50),
+    @Altura INT,
+    @Peso INT
+  
+AS
+DECLARE @CONTADOR_ID INTEGER;
+BEGIN
+SELECT @CONTADOR_ID=ISNULL(MAX([ID]),0)+1
+FROM [dbo].[Futbolista];
+    INSERT INTO Futbolista (Id, Nombre, FechaNacimiento, Nacionalidad, Posicion, Altura, Peso, Estado)
+    VALUES (@CONTADOR_ID, @Nombre, @FechaNacimiento, @Nacionalidad, @Posicion, @Altura, @Peso, 'A')
+END
